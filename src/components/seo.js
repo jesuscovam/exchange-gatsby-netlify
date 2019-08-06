@@ -37,7 +37,7 @@ function SEO({ description, lang, meta, title }) {
       meta={[
         {
           name: `description`,
-          content: metaDescription
+          content: "venezuela exchange money"
         },
         {
           property: `og:title`,
@@ -45,7 +45,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: "venezuelan exchange money"
         },
         {
           property: `og:type`,
@@ -57,7 +57,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author
+          content: "Jesus Cova"
         },
         {
           name: `twitter:title`,
@@ -65,7 +65,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription
+          content: "venezuelan exchange money"
         }
       ].concat(meta)}
     />
