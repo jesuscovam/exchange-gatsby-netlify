@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-
+import Footer from "../components/UI/footer/footer";
 import "./layout.css";
 
 const Layout = ({ children }) => {
@@ -34,11 +34,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          <a href="https://twitter.com/jesusacova" target="_newblank">
-            © Jesus Cova
-          </a>
-        </footer>
+        <Footer></Footer>
       </div>
     </>
   );
