@@ -1,21 +1,62 @@
-import React from "react"
-import { Link } from "gatsby"
+import React, { Component } from "react";
+import axios from "axios";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import ExchangeRates from "../components/exchangeRates/exchangeRates";
+class IndexPage extends Component {
+  state = {
+    dolarVen: null,
+    dolarPeso: null,
+    pesoVen: null
+  };
+  async componentDidMount() {
+    try {
+      const responseVen = await axios.get(
+        "https://cors-anywhere.herokuapp.com/https://s3.amazonaws.com/dolartoday/data.json"
+      );
+      const responsePeso = await axios.get(
+        "https://cors-anywhere.herokuapp.com/https://api.exchangeratesapi.io/latest?base=USD"
+      );
+      const dolarVen = responseVen.data.USD.transferencia;
+      const dolarPeso = responsePeso.data.rates.MXN;
+      const pesoVen = dolarVen / dolarPeso;
+      this.setState({
+        dolarVen,
+        dolarPeso,
+        pesoVen
+      });
+      console.log(dolarVen);
+      console.log(dolarPeso);
+      console.log(pesoVen);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  render() {
+    let rates = null;
+    if (this.state.pesoVen) {
+      rates = (
+        <ExchangeRates
+          dolarVen={this.state.dolarVen}
+          pesoVen={this.state.pesoVen.toFixed(2)}
+        ></ExchangeRates>
+      );
+    } else {
+      rates = <div>Loading...</div>;
+    }
+    return (
+      <Layout>
+        <SEO title="Home" />
+        <h1>
+          Hi people
+          <span role="img" aria-label="hi">
+            👋
+          </span>
+        </h1>
+        {rates}
+      </Layout>
+    );
+  }
+}
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
-
-export default IndexPage
+export default IndexPage;
