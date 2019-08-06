@@ -48,7 +48,7 @@ class IndexPage extends Component {
       <Layout>
         <SEO title="Home" />
         <h1>
-          Hi people
+          Hi cham@
           <span role="img" aria-label="hi">
             👋
           </span>
