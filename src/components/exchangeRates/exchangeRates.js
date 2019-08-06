@@ -6,7 +6,7 @@ const exchangeRates = props => {
   return (
     <div className={classes.Exchange}>
       <Paper className={classes.Paper}>
-        <Typography>
+        <Typography className={classes.Typo}>
           1 USD = {props.dolarVen} bolivares
           <span role="img" alt="money">
             💸💸💸
