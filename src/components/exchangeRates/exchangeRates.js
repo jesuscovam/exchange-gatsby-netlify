@@ -9,10 +9,10 @@ const exchangeRates = props => {
         <Typography className={classes.Typo}>
           1 USD = {props.dolarVen} bolivares
           <span role="img" alt="money">
-            💸💸💸
+            💸💸
           </span>
         </Typography>
-        <Typography>1 MXN = {props.pesoVen} bolivares 💸💸💸</Typography>
+        <Typography>1 MXN = {props.pesoVen} bolivares 💸💸</Typography>
       </Paper>
     </div>
   );
