@@ -25,9 +25,6 @@ class IndexPage extends Component {
         dolarPeso,
         pesoVen
       });
-      console.log(dolarVen);
-      console.log(dolarPeso);
-      console.log(pesoVen);
     } catch (error) {
       console.log(error);
     }
