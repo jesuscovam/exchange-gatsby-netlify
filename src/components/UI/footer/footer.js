@@ -4,9 +4,9 @@ import classes from "./footer.module.css";
 const Footer = () => (
   <div>
     <footer className={classes.Footer}>
-      <a href="https://twitter.com/jesusacova" target="_newblank">
+       <p>
         © Jesus Cova
-      </a>
+       </p>
       <a
         href="https://github.com/jesuscovam/exchange-gatsby-netlify"
         target="_newblank"
