@@ -17,7 +17,7 @@
     "gatsby-remark-a11y-emoji": "^1.0.0",
     "gatsby-remark-emojis": "^0.3.2",
     "gatsby-source-filesystem": "^2.1.8",
-    "gatsby-transformer-remark": "^2.6.10",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.2.5",
     "google-fonts": "^1.0.0",
     "prop-types": "^15.7.2",
